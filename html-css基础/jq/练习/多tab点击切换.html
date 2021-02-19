@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>多tabl点击切换</h2>
+		<ul id="tab">
+			<li id="tab1">10元套餐</li>
+			<li id="tab2">30元套餐</li>
+			<li id="tab3">50元套餐</li>
+		</ul>
+		<div id='container'>			
+			<div id="container1">
+				10元套餐<br />每月七元钱
+			</div>
+			<div id="container2 " style="display: none;>
+				30元套餐<br />每月30元套餐元钱
+			</div>
+			<div id="container3" style="display: none;">
+				50元套餐<br />每月50元钱
+			</div>			
+		</div>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	   <script type="text/javascript">
+	   	
+	   	  var  $contents=$('#container>div');
+	   	 
+	   	  //给3个li加监听
+	   	  $('#tab>li').click(//隐式遍历。添加监听
+	   	  	function(){
+	   	  	   $contents.css('display','none');
+	   	       var index=$(this).index();
+	   	       //找到对象的div
+	   	       $contents[index].style.display="block";
+	   	       //$($contents[index]).css('display','block');
+	   	  	}
+	   	  );
+	   </script>
+	</body>
+</html>

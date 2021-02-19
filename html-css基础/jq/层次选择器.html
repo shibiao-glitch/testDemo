@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" class="box">
+			div1(class="box")
+		</div>
+		<div id="div2" class="box">
+			div2(class="box")
+		</div>
+		<div id="div3" >
+			 div3
+		</div>
+		<span class="box">
+			span
+		</span>
+		
+		<br />
+		<ul>
+			<li>aaaa</li>
+			<li title="hello">BBBB</li>
+			<li class="box">CCC</li>
+			<li >cccccc</li>
+			<li title="hello" ><span id="">
+				aaaa
+			</span></li>
+			<span id="">
+				span1
+			</span>
+			<li >cccccc</li>
+		</ul>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>		
+	  <script type="text/javascript">
+	  	
+	  	//ul下所以的span。
+	  	$('ul span').css('background-color','red');
+	  	//ul子元素span。
+	  	$('ul>span').css('background-color','yellow');
+	  	
+	  	//紧挨的。一个。
+	     $('.box+li').css('background-color','green');
+	     
+	     //匹配，元素之后的所有的兄弟元素。ul下面.box元素的后面的所有兄弟元素（li.div.......）。
+	     $('ul>.box~*').css('background-color','green');
+	  </script>
+	</body>
+</html>

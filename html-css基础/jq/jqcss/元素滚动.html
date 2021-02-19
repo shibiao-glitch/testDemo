@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0px;
+			}
+			
+			.div1{
+				position: absolute;
+				width: 200px;
+				height: 4000px;
+				top:20px;
+				left:10px;
+				background-color: blue;
+				overflow: scroll;
+			}
+			.div2{
+				position: absolute;
+				width: 100px;
+				height: 5000px;
+				top:50px;
+				background: red;
+			}
+			.div3{
+				position:relative;
+			}
+			body{
+				overflow:scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<div class="div2">
+			
+		</div>
+		</div>
+		
+		<div class="div3">
+			<button id="btn1">btn1</button>
+				<button id="btn2">btn2</button>
+		</div>
+		<!--
+        	1.scrollTop()
+        	   读取/设置滚动条的y坐标
+        	2.$(document.body).scrollTop()+$(document.documentElement).scrollTop()
+        	  读取页面滚动条的y坐标
+        	3.$('body,html').scrollTop(60);
+        	  滚动到指定位置。
+        -->
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$('#btn1').click(function()
+	    	{
+	    	  console.log($('div').scrollTop());//div滚动条为位置
+	    	  console.log($('body').scrollTop());
+	    	})
+	    	
+	    	$('#btn2').click(function()
+	    	{
+	    	  console.log($('div').scrollTop(200));//div滚动条为位置
+	    	  console.log($('html,body').scrollTop(300));
+	    	})
+	    </script>
+	</body>
+</html>

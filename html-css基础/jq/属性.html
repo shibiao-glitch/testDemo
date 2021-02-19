@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" class="box" title="one">
+			div1(class="box")
+		</div>
+		<div id="div2" class="box" title="two" >
+			div2(class="box")
+		</div>
+		<div id="div3" >
+			 div3
+		</div>
+		<span class="box">
+			span
+		</span>	
+		<span >
+			span
+		</span>	
+		<br />
+		<ul>
+			<li>aaaa</li>
+			<li title="hello">BBBB</li>
+			<li class="box">CCC</li>
+			<li >cccccc</li>
+			<li  disabled="false">dsd</li>
+			<li title="hello" ><span id="">
+				aaaa
+			</span></li>
+			<span id="">
+				span1
+			</span>
+			<li ><span id="">
+				span1
+			</span></li>
+		</ul>
+		用户名<input type="text" name="" id="" value="qwqwr" /><br />
+		 密码 <input type="password" name="" /> <br />
+		 爱好：<input type="checkbox" name="" id="" value="篮球" />篮球
+		 <input type="checkbox"  checked="checked" id="" value="足球" />足球
+		  <input type="checkbox" name="" id="" value="羽毛球" />羽毛球 
+		  <br />
+
+ 
+	  <script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	 <script type="text/javascript">
+	 	//属性title的值。
+	 	 console.log($('div:first').attr('title'));
+	 	//添加name属性
+	 	$('div').attr('name','agggugu');
+	 	
+	 	//移除所有div的title属性
+	 	$('div').removeAttr('title');
+	 	
+	 	//给所有的div设class属性//覆盖原来的
+	 	$('div').attr('class','newClass')
+	 	
+	 	//添加class。不能覆盖原来的
+	 	$('div').addClass("abc");
+	 	
+	 	//移除所有div的guiguclass
+	 	$('div').removeClass("guigu");
+	 	
+	 	//得到最好一个li标签体文本
+	 	console.log($('li:last').html());
+	 	
+	 	//设置第一个li标签的标签纸
+	 	$('li:first').html('<h1>么么么么么么么</h1>')
+	 	
+	 	//获取表单中的值
+	 	console.log($(':text').val());
+	 	
+	 	//设置。读写合一。链式调用。
+	 	console.log($(':text').val('是是是'));
+	 	
+	 	//prop：专门操作属性值为布尔值的属性
+	 	//attr:  操作属性值为布尔值的属性。
+	 	//style。        css操作。样式相关，样式里面的属性。		用分号
+	 	// class="";                  组件自身的属性。              用等号
+	 	
+	 	
+	 	
+	 </script>
+	</body>
+</html>

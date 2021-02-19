@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			    定义一个函数，专门用来
+			    
+			 * 
+			 * 
+			 * */
+			function myClick(idstr, func){
+				
+				var btn =document.getElementById(idstr);
+				var ps=btn.parentNode;//父节点
+				var sps=btn.previousSibling//前一个兄弟节点。也可能获取空白节点。
+				var pe=btn.previousElementSibling()//前一个兄弟元素。i8以上兼容。
+				
+				var pe=btn.firstChild()//第一个字节点
+				var text=btn.innerText();//值。
+				
+				btn.onclick=func;
+			}
+			
+			window.onload= function(){
+				
+				//
+				var btn01=document.getElementById("btn01");
+				btn01.onclick=function(){
+					
+					var bj =document.getElementById("bj");
+					alert(bj.innerHTML);
+				};
+				
+				
+				var btn02 =document.getElementById("btn02");
+				btn02.onclick=function(){
+					//查找所以li节点。
+					//类数组对象。所有查找对象封装到对象中。即使一个也会被封装
+					var  lis=document.getElementsByTagName("li");
+					alert(lis);
+					
+				};
+				
+				var btn03 =document.getElementById("btn02");
+				btn03.onclick=function(){
+					 var inputs= document.getElementsByName("gender");
+					 alert(inputs.length);
+					 for (var i=0;i<inputs.length ;i++) {
+					 	  //自结束标签。不可以用这个方法取内容.想读啥就直接读。
+					 	  /*
+					 	   元素.属性
+					 	     例如：
+					 	        元素.id  元素.name 元素.value
+					 	        注意:class需要用className
+					 	   * 
+					 	   * */
+					 	  alert(inputs[i].innerHTML);
+					 	    alert(inputs[i].value);
+					 	    alert(inputs[i].type);
+					 	    alert(inputs[i].name);
+					 }
+				}
+				
+				
+				var btn04 =document.getElementById("btn04");
+				btn04.onclick=function(){
+					  var city= document.getElementById("city");
+					  //
+					  /*
+					     childNodes
+					                --子节点
+					                --包括文本节点。包括空白文本的节点。
+					   * 
+					   * 
+					   * **/
+					  var cns=city.childNodes;
+					 
+					  /*
+					   children
+					              --子元素。
+					              --不包括文本节点。
+					   * 
+					   * */
+					  var cns2=city.children;
+					  
+					  
+					  /*
+					    firstChild
+					           --第一个节点。包括空白
+					   * 
+					   * 
+					   * **/
+					    var cns2=city.firstChild;
+					 //获取所用的子节点
+					  var li= document.getElementsByTagName("li");
+					  console.log(li.length);
+					
+				}
+				
+				
+				   var ClassName= document.getElementsByClassName("li");//取class兼容性问题
+				   
+					var body =document.body;//body
+					var body =document.documentElement;//html
+					var body =document.all;//所以元素
+					
+					/*
+					 document.querySelector
+					    参数：一个字符串。可以根据一个css选择器来查询一个元素节点对象.
+					      返回值：永远只返回一个。多个也只会返回第一个。
+					 
+					 document.querySelectorAll
+					     参数：一个字符串。可以根据一个css选择器来查询一个元素节点对象.
+					       返回值：符合条件的所有。几时只有一个返回的也是数组对象。
+					 * 
+					 * *
+					 * */
+					var vid= document.querySelector(".box div");
+						var vid= document.querySelectorAll(".box div");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

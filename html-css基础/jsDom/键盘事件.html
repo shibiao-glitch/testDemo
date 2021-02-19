@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload =function(){
+				
+				/*
+				  键盘事件
+				    onkeydown
+				       --键盘按下的
+				       --第一次和第二次时间间隔比较长。其他间隔越来越短。
+				    onkeyup
+				       --键盘放开的
+				   键盘事件一般可以绑定给获取焦点的对象。或者documnet。    
+				 * 
+				 * */
+				document.onkeydown=function(even){
+					//even.keyCode获取按钮那个按钮。
+					
+					console.log("键盘按下的");
+				}
+				document.onkeyup=function(){
+					console.log("键盘放开的");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//$.each();遍历数组或对象中的数据
+		var obj ={
+			name:"tom",
+			setNmae:function(){
+				
+			}
+		}
+		
+		$.each(obj, function(key,value) {
+			console.log(key,value);
+		});
+		
+		
+		//$.type(obj):得到数据类型
+		console.log($.type($));//function
+		
+		//$.isArray(obj);
+		console.log($.isArray($('body')));
+		
+		//$.isFunction(obj)
+		console.log($.isFunction($));
+		
+		//$.purseJSON(json);解析json字符串转换为js对象/数组。
+		//json对象转换为js对象。
+		//json数组转换为js数组。
+		
+	</script>
+	</body>
+</html>

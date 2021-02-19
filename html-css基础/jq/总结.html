@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	 1.jQuery
+        	   js函数库：
+        	       封装简单化dom操作（crud）/Ajax[局部刷新]
+        	   why?
+        	      强大选择器：方便快捷查找dom元素
+        	       隐式遍历（迭代）：一次操作多个元素
+        	       读写合一：读数据/写数据用一个函数。
+        	       事件处理
+        	       链式调用
+        	    DOM操作（cud）
+        	         样式操作css();
+        	   how?
+        	         引入jquery库
+        	     	本地引入与Cdm远程引入。
+        	     	测试版本与生产版本（压缩版）
+        	         使用jquery	
+        	         	使用jquery函数: $/jquery
+        	         	使用jquery对象：$xxx(执行$()得到的
+        	 2.jQuery的两把利器
+        	      jquery函数:
+        	          jquery向外暴露的就是jquery函数。可以直接使用。
+	        	          当成一般函数使用:$(param)
+	        	          param是函数：相当于widow.onload=function();文档加载完成后的监听
+	        	          param是选择器字符串:查找所以匹配的dom元素，返回包含所以dom元素jquery对象
+	        	          prarm是dom元素。将dom元素对象包装为jquery对象返回。$(this)
+	        	          prarm是标签字符串：创建标签dom元素对象并包装为jquery对象返回。
+	        	          当对象使用：$.xxx
+	        	          each(obj/arr,function(key/index,value/item){});
+        	      jquery对象:
+        	         	 包含所以匹配的n个dom元素的伪数组对象。
+        	        	  执行$()返回的就是jquery对象。
+        	       	 基本行为：
+        	       	    length/size();得到dom元素的个数
+        	       	    [index]:得到指定下标对应的dom元素
+        	       	    each(function(index.domELE){});遍历所有dom元素
+        	       	    index();得到当前dom元素在所有兄弟中的下标
+        	       	    
+        	         
+        	 3.选择器
+        	     	是什么?
+	        	     	有特点语法规则（css选择器）的字符串。
+	        	     	用来查找某个/dom元素。$(selector)
+        	     	分类：
+        	     	    基本
+        	     	     id,class,元素，*，交集(,)，并集。
+        	     	    层次
+        	     	     div  li：后代元素
+        	     	     div>li : 子元素
+        	     	     div+li ：
+        	     	     div~li
+        	     	    过滤（伪元素引号开头:）
+        	     	          ：first
+        	     	     :last
+        	     	     :not(selector)
+        	     	     :eq(index)
+        	     	     :lt
+        	     	     :gt
+        	     	     :odd
+        	     	     :even
+        	     	     :hidden
+        	     	     :visible
+        	     	     [attrName]
+        	     	     [attrName=value]
+        	     	    表单
+        	     	     :input 
+        	     	     :text
+        	     	      :checkbox
+        	     	      :checked(选中的)
+        	     	
+        	 4.属性
+        	      操作标签的属性，标签体文本
+        	    attr(name)/attr(name,value):读写非布尔值的标签属性
+        	    prop(name)/prop(name,value):读写布尔值的标签属性
+        	    
+        	    removeAttr(name)/removeProp(name):删除属性
+        	    addClass(classValue):添加class
+        	    removeClass(classValue):移除指定class
+        	    val()/val(value):读写标签的value,
+        	    html()/html(htmlString):读写标签体文本。
+        	    
+        	    
+        1.css模块
+            style样式
+              css(styleName);根据样式名取对应的值。
+              css(styleName,value);设置一个样式。
+              css({多个样式对});设置多个样式             
+                        位置坐标
+               	offset();读写/当前元素坐标（原点：页面左上角）
+               	position();读当前元素坐标（原点是父元素左上角）
+               	scollTop()/scollLeft;读写元素/页面的滚动条坐标。
+                        尺寸（盒子模型）
+               width()/height();内容尺寸。width heigth
+               innerWidth()/innerHeigth;内部尺寸。widt+padding（内边距）
+               outerWidt()/outerHeight();外部尺码.width+padding+border:待ture加外边距
+                                     
+        2.筛选模块
+          	过滤：
+          	        在jquery内部的元素中找出部分匹配出的元素，并封装成新的jquery对象返回。
+          	  first()
+          	  last()
+          	  eq(index)
+          	  filter(selector)//当前
+          	  not(selector)
+          	  has(selector)//当前的子孙元素提要求
+          	  
+          	查找：
+              	查找jquery对象内部 的元素的子孙/兄弟/父母。并封装成新的jquery对象返回。
+            children(selector):子元素
+            find(selecttor):后代元素。
+            preAll(selector);//前面的兄弟进行过滤。
+            siblings(selector):所有兄弟
+            parent();父元素。
+        3.文档处理模块（cud）
+		           增加
+		       append()/appendTo():插入后部
+		       preppend()/preppendTo();插入前面
+		       before();插入前面
+		       afer();插入后面
+		           删除
+		        remove()；将自己及内部的孩子都删掉
+		        empty();掏空自己还在。
+		           更新
+		         replaceWhith();
+        
+        4.事件模块
+		            绑定事件
+		         evenName(funciton(){})
+		         on（'evenName',function(){}）
+		        ·常用事件：click,hover(function(){c},function(){})
+		            解绑事件
+		          off('evenName');
+			    事件委托
+			       1将子元素的事件委托给父元素处理
+			       2.事件监听绑定在父元素上，但事件发生在子元素上
+			          	事件会冒泡到父元素
+			     		但是最终调用的事件回调函数的是子元素：event.target指定来源。
+				    好处：
+				        新增的元素，跟着一起响应
+				    编码：
+				    delegate(selector,'eventname',function(){this是子元素})
+				    undelegate('eventName');解绑
+		            事件坐标
+		            event.offsetX 原点：当前元素
+		            event.clienX  原点：窗口
+		            event.pageX   原点：页面.
+		            事件相关
+		                 停止事件冒泡:event.stopPropagation();
+		       	阻止事件默认行为:event.prevenDefalut();
+        -->
+	</body>
+</html>

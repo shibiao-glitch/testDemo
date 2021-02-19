@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a:link{
+			
+			color: aquamarine;
+			
+		}
+		/*
+		 涉及到a的伪类一个有4中。
+		 		而这四个选择器的优先级是一样的。
+		 
+		 * 
+		 * */
+		a:visited{
+			color:red ;	
+			font-size: 150px;		
+		}
+		
+		a:hover{
+			color:blue ;				
+		}
+		
+		a:active{					
+			color:brown ;	
+		}
+		</style>
+	</head>
+	<body>
+				<a class="abc"   href="http://www.baidu.com">我是一个超链接</a>
+		<br />	
+		<a class="bcc"  href="http:www.baidu1234.com">我是一个超链接</a>
+		
+		<p>我是一个段落</p>
+		
+		<input type="text" />
+	</body>
+</html>

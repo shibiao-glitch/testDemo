@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+   /*    
+       n个引用变量指向同一个对象，通过一个变量修改对象内部数据，其他所有变量看到的都是修改之后的数据。
+       2个引用变量指向同一对象.让其中一个引用变量指向另一个对象。另一个引用变量依然指向前一个对象。        
+    **/
+   <script type="text/javascript">
+   	var  obj1={name:"Tom"};
+   	var  obj2=obj1;
+   	obj2.age=12;
+   	console.log(obj1.age);
+   	function fn(obj){
+   		obj.name='A';
+   	};
+   	fn(obj1);
+   	console.log(obj2.name);
+   	
+   	var a={age:12};
+   	var b=a;
+   	a={name:"bob",age:13};
+   	b.age=14;
+   	console.log(b.age+a.name+a.age);
+   	
+   	
+   	
+   	function fn2(obj){
+   		obj.age=19;
+   		obj={age:15};
+   		obj.age=39;
+   	};
+   	fn2(a);
+   	//函数执行完后：局部变量自动释放。
+   	console.log(a.age);
+   </script>		
+	</body>
+</html>

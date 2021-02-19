@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" class="box">
+			div1(class="box")
+		</div>
+		<div id="div2" class="box">
+			div2(class="box")
+		</div>
+		<div id="div3" >
+			 div3
+		</div>
+		<span class="box">
+			span
+		</span>
+		
+		<br />
+		<ul  id ='ul1'>
+			<li class="outer">aaaa</li>
+			<li class="outer1">BBBB</li>
+			<li class="inner">CCC</li>
+			<li title="hello" >DDDD</li>
+			<li title="hello" ><span>sssss</span></li>
+			<span>sssdddss</span>
+			<span>sssdddss</span>
+			<button id="btn03">点击</button>
+			<a href="http:www.baidu.com" id='aaa'>跳转</a>
+		</ul>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	   <script type="text/javascript">
+	   	//绑定事件1
+	   	$('.outer').click(
+	   		function(){
+	   		  alert('ddd');
+	   	})
+	   	
+	   	//绑定事件2
+	   	$('.outer1').on(';',function(){
+	   		  alert('dddddddd');
+	   	});
+	   	
+	   	//鼠标移入移除
+	   	$('.inner').mouseenter(
+	   		function(){
+	   			 alert('移入');
+	   		}
+	   	).mouseleave(function(){
+	   			 alert('移除');
+	   	});
+	   	//鼠标悬停。
+	   	$('.inner').hover(function(){},function(){})
+	   	
+	     //解除监听
+	    $('.inner').off('mouseenter');
+	    
+	    
+	    //3个重要位置
+	    $('#btn03').click(function(event){
+	    	console.log(event.offsetX,event.offsetY);//事件元素的左上角。
+	    	console.log(event.pageX,event.pageY);//页面的左上角
+	    	console.log(event.clientX,event.clientY);//窗口的左上角
+	    	
+	    	//停止事件冒泡[重要]
+	    	event.stopPropagation();
+	    })
+	    
+	    //当前时间为偶是不跳转    
+	    $('#aaa').click(function(event){
+	    	//停止默认行为。链接的跳转行为。
+	    	event.preventDefault();
+	    })
+	   
+	    
+	   	
+	   </script>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			.p1{
+				background-color: red;
+				
+			}
+			
+			p{
+				background-color: yellow;
+				
+			}
+			
+			#p2{
+				
+				background-color: cadetblue;
+			}
+			
+			/*
+			 
+			使用不容的选择器，选中同一个元素时，并且设置相同样式时
+			    	这时候样式之间产生了冲突，到底最终采用哪个选择器定义的样式，由选择器优先级决定。
+			    	优先级高的优先显示，
+			    	
+			    	
+			优先级的规则：
+			    内联样式，  优先级 1000
+			  id选择器     优先级  1000
+			    类和伪类       优先级   10
+			    元素选择器   优先级 1
+			    通配*      优先级0
+			    继承的样式   没有优先级 。（祖先给的）
+			    
+			 1 当选择器中包含多种选择器时候，需要将多种选择器的优先级相加然后进行比较。
+			 		但是注意：选择器的优先级不会超过他最大的数量级。
+			 2 优先级一样的。响应靠后面的。
+			 
+			 3 并集选择器的优先级单独基础。一层一层比较。
+			   div,p,span
+			    
+			 4.可以在样式的最后，添加一个!important，则此时样式的优先级最高，甚至超过内联样式。但是在开发中尽量避免使用。
+			 
+			    
+			    
+			 * 
+			 * **/
+			*{
+				
+				font-size: 50px;
+			}
+			
+			p{
+				font-size: 30px;
+				
+			}
+			
+			p#p2{
+				
+				background-color: red;
+			}
+			
+			#p2{
+				
+				background-color: yellow;
+			}
+			
+			.p1{
+				
+				color: deepskyblue;
+			}
+			
+			.p3{
+				
+				color: darkcyan;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p1 p3" id="p2" >	我是一个段落
+		  <span>我是span</span>
+		</p>
+	</body>
+</html>

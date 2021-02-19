@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+				border: 10px red solid;
+				
+				/*
+				 外边距（margin）指的是当期盒子与其他盒子间的距离
+				   他不会影响可见框的大小，而是会影响到盒子的位置。
+				   盒子有四个方向的边距；top  right bottom left。也是顺时针。
+				  					 设置可正负。 
+				   
+				   设置上和左：影响自身位置。
+				          下和右：影响其他盒子位置。
+				          
+				 left  rigth  同时设置auto 则自动居中。        
+				 
+				 
+				 
+				 垂直外边距重叠。
+				      --如果相邻两个兄弟盒子分别设置上下边距，会取两个最大的。
+				      --如果不需要可以中间加个元素。
+				      
+				      --如果相邻两个父子盒子。设置一个边距。两个都响应
+				      --如果不需要可以中间加元素。
+				 
+				 * */
+				
+				margin-top: 120px;
+				margin-left: 100px;
+			}
+			
+			
+			.box2{
+				
+				width: 100%;
+				height: 100%;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2">
+				
+			</div>
+		</div>
+	</body>
+</html>

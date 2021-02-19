@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>过滤选择器</title>
+		
+	</head>
+	<body>
+		/*
+		 过滤选择器：是在原有的基础上进行过滤的。
+		 
+		 **/
+		<div id="div1" class="box">
+			div1(class="box")
+		</div>
+		<div id="div2" class="box">
+			div2(class="box")
+		</div>
+		<div id="div3" >
+			 div3
+		</div>
+		<span class="box">
+			span
+		</span>
+		
+		<br />
+		<ul>
+			<li>aaaa</li>
+			<li title="hello">BBBB</li>
+			<li class="box">CCC</li>
+			<li >cccccc</li>
+			<li  disabled="false">dsd</li>
+			<li title="hello" ><span id="">
+				aaaa
+			</span></li>
+			<span id="">
+				span1
+			</span>
+			<li >cccccc</li>
+		</ul>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	
+	    	//选择第一个div
+	    	//$('div:first').css('background-color','yellow');
+	    	//选择最后一个class为box的元素
+	    	//$('.box:last').css('background-color','yellow');
+	    	
+	    	//class属性不为box的
+	    	//$('div:not(.box)').css('background-color','yellow');
+	    	
+	    	//选择第二个第三个li。索引比元素长度小1//多个过滤选择器不是同时执行的，而是依次执行的。
+	    	//$('li:gt(0):lt(2)').css('background-color','yellow');
+	    	
+	    	//元素下。文本包含。
+	    	//$('li:contains("cc")').css('background-color','yellow');
+	    	
+	    	//隐藏的
+	    	//$('li:hidden').css('background-color','yellow');
+	    	
+	    	//有属性
+	    	//$('li[title]').css('background-color','yellow');
+	    	
+	    	//有属性。并且值等于多少
+	    	$('li[title="hello"]').css('background-color','yellow');
+	    </script>
+	</body>
+</html>

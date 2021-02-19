@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	
+        	CSS 处理网页时，它认为每个元素都包含在一个盒子里面。网页就是各个盒子间的摆放。
+	        	内容区：                                    width,height设置大小。
+	        	内边距：内容和盒子间的距离。padding
+	        	边框                                            border
+	        	外边距：盒子与盒子间的距离。margin
+                       盒子大小由这内容，边距，边框。组成。 	
+        -->
+        <style type="text/css">
+        	.box1{
+        		/*
+        		   内容区设置。width;height
+        		 * */
+        		width: 100px;
+        		height: 100px;
+        		background-color: greenyellow;
+        		
+        		
+        		/*
+        		   为元素设置边框。可分别指定。顺时针设置。
+        		   要为一个元素边框必须指定三个样式
+        		      border-width  边框宽度
+        		      border-color  边框颜色
+        		      border-sytle  边框样式
+        		 * */
+        		border-width: 10px 20px 30px 40px ;
+        		border-color: red ;
+        		border-style: solid ;
+        		
+        		/***
+        		 *  边框设置指定边。
+        		 * 
+        		 *   border-left-width
+        		 *   border-left-color
+        		 *   border-left-sytle
+        		 */
+        	}
+        </style>
+		<div class="box1">
+			
+		</div>
+	</body>
+</html>

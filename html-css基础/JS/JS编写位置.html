@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	
+        	可以间js代码编写到script中。
+        	
+        	 <script type="text/javascript">
+			 	alert("哥。你真帅呀");
+			</script>
+        -->
+		
+		
+		<!--
+          		1 可以将js代码编写到外部的js文件中
+          		2 script标签一旦用于引入外部文件，就不能再编写代码啦。及时编写了浏览器也不会识别。
+        -->
+        <script src="js/script.js" type="text/javascript" charset="utf-8">      	
+        	alert("我是内部标签");
+        </script>
+        
+          <script  type="text/javascript" charset="utf-8">      	
+        	alert("我是内部标签22");
+        </script>
+	</head>
+	<body>
+		
+		<!--
+        	作者：offline
+        	时间：2021-01-15
+        	描述：
+        	
+        	js代码可以写在属性中，但是会导致代码耦合，不方便维护。
+        -->
+		<button onclick="alert('讨厌,点我干嘛');">点我一下	</button>
+		
+		
+		<a></a>
+	</body>
+</html>

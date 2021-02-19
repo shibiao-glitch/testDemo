@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			 /*
+			    变量的声明提前。
+			      --使用var关键字声明的变量。会在所有的代码执行之前被声明。
+			         当时如果什么时候不适用关键之var,则变量不会被声明提前
+			        
+			        
+			  函数声明提前。
+			    --  使用函数声明形式创建的函数。function fun(){};
+			                它会在所有的代码执行之前就被创建了。
+			    ---  使用函数表达式创建的函数。不会被声明提前。
+			    ---  全局作用域的变量。整个页面都可以用。
+			        
+			  * */
+			 console.log(a);
+			 var a=123;
+			 
+			 fun();
+			 //函数声明。会被提前创建
+			 function fun(){
+			 	
+			 	
+			 }
+			 
+			 //函数表达式，不会被提前创建。
+			 var fun2=function(){
+			 	
+			 	
+			 }
+			 
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

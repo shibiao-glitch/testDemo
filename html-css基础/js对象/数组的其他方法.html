@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr =["q","w","e"];
+			var arr2=["wew","sd"];
+			var arr22=["wew","sd"];
+			/*
+			  concat();
+			        --可以连接量或多个数组。并将新数组返回。
+			        --不会对原数组影响
+			  join()
+			       -- 改方法可以将数组转换成一个字符串。
+			       -- 也不影响。将值相互连接。
+			       --在join()中可以指定一个字符串作为参赛。这个字符串将会为数组中元素的连接符合
+			               如果不知道连接符，则默认使用，连接。
+			               
+			  reverse()
+			      --该方法用来反转数组。
+			      --该方法会直接修改原数组。
+			  
+             sort();
+                  --可以用来对数组进行排序。
+                  --会影响原数组。默认按照unicode编码进行排序
+                  --添加一个回调函数。来指定排序规则。
+                          	回调函数。需要两个形参。
+				                       如果返回值大于0，则元素会交换位置。(两个不停的交换位置)
+				                       如果小于或者等于0，则不会换位置。
+			 * 
+			 * */
+			var  arr3=	arr.concat(arr2,arr22,"eeeeeee");
+			console.log(arr);
+			console.log(arr2);	
+			console.log(arr3);	
+			
+			var  result=arr.join();
+			console.log(result);
+			console.log( typeof  result);
+			
+			 result=arr.join("");
+			console.log(result);
+			console.log( typeof  result);
+			
+			arr.reverse();
+			console.log(arr);
+			arr.sort();
+			console.log(arr);
+			
+			
+			arr=[3,4,2,8];
+			arr.sort(function(a,b){
+				return a-b;
+			});
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

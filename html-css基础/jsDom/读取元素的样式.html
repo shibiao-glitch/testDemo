@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#box1{
+			
+			width: 1800px;
+			height: 100px;
+			background-color: yellow;
+		}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload =function(){
+				
+				var box1=document.getElementById("box1");
+				var btn01=document.getElementById("btn01");
+				btn01.onclick=function(){
+				  
+				  /*
+				    获取元素当前显示的样式
+				     语法：元素.currenStyle.样式名
+				   * 
+				   * */
+				  
+				 // console.log(box1.currentStyle.background); ie支持。其他不支持
+				 
+				 /*
+				    在其他浏览器中可以用getComputedStyle(box1,null);
+				     参数：  第一，需要获取的元素
+				                  第二，可以传递一个伪元素。可以为null
+				    读取：
+				                 对象.样式名
+				       注意：没有设置样式的时候，读取真实的值。例如没有设置宽度，读取当前浏览器中 宽度。          
+				  
+				  
+				  
+				    注意：currenStyle，getComputedStyle读取的样式都是只读的。
+				  * 
+				  * 
+				  * *
+				  * */
+				  var obj= getComputedStyle(box1,null);
+				  alert(obj.width);
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn01">点我一下试试</button>
+		   <button id="btn02">点我一下试试</button>
+		   <br />
+		<div id="box1">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			   创建一个Person构造函数
+			   
+			   --在Person构造函数中，为每一个对象添加一个sayName方法。
+			    
+			 * 
+			 * 
+			 * 
+			 * **/
+			
+			function Person(name,age,gender){
+				this.name=name;
+				this.age=age;
+				this.gender=gender;
+				this.sayHello=fun;
+				
+			}
+			function fun(){					
+			  alert("hello大家好。我是"+this.name);
+			}
+			var  per1=new Person("s",12,"nan");
+			per1.sayHello();
+			var  per2=new Person("ss",12,"nan");
+			per2.sayHello();
+			console.log(per1.sayHello== per2.sayHello)
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

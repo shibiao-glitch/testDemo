@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+			}
+			
+			#box2{
+				width: 20px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onclick=function(){
+				/*
+				   拖拽box1元素
+				      1开始：鼠标按下，onmousedown    开始
+				      2           鼠标移动    onmousemove.  鼠标移动的相对位置。
+				      3结束：鼠标放下。
+				 * 
+				 * **/
+				var  box1= document.getElementById("box1");
+				box1.onmousedown=function(){
+					
+					document.onmousemove= function(event){
+						var left=event.clientX;
+						var top=event.clientY;
+						box1.style.left=left+"px";
+						box1.style.top=top+"px";
+					};	
+					
+					document.onmouseup=function(){
+						//当鼠标松开是，这两个事件都应该无效。
+					    document.onmousemove=null;					  
+					   document.onmouseup=null;
+					};
+					
+					/*
+					   当我们拖拽一个网页中的内容时，浏览器会默认去搜索引擎查找。
+					     --如果不希望发生，取消默认行为就可以了。
+					 * 
+					 * 
+					 * */
+					return false;
+				};
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p>	我是一个文字</p>
+		<div id="box1">
+			
+		</div>
+		
+		<div id="box2">
+			
+		</div>
+	</body>
+</html>

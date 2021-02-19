@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			   打印对象，也是打印对象的tosting()方法;
+			   
+			 * 
+			 * **/
+			
+			function Person(name,age,gender){
+				this.name=name;
+				this.age=age;
+				this.gender=gender;							
+			}
+			
+			var  per=new Person("11",12,"11");
+			var  per1=new Person("112",12,"11");
+			per.toString=function(){ return "CES111";};
+			console.log(per);
+			console.log(per1);
+			//修改原型的tostring;则所以的对象都可以修改了。
+						
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

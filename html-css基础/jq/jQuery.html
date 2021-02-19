@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button> 测试</button>
+		<!--
+        	1.jquery 核心函数
+        	    简称：jquery函数($/jquery)
+	        	  jquer库向外直接暴露的就是$/jquery
+	        	     引入jquery库后，直接使用$即可
+	        	    当函数使用：$(xxx)
+	        	     当对象使用：$.xxx()
+            2.jquery 核心对象
+              	简称：jquery对象
+              	得到jquery对象：执行jquery函数返回的就是jquery对象
+              	使用jquery对象：$obj.xxx()
+        -->
+        <script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	
+		<script type="text/javascript">
+			//1.jQuery函数，直接可用
+			console.log($);
+			console.log(typeof $);
+			console.log(jQuery===$);
+			//2.jQuery对象 执行jQuery函数得到它
+			console.log($() instanceof Object);
+		</script>
+	</body>
+</html>

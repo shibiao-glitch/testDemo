@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+		/*
+		 
+		 * 
+		 * 
+		 *  1   其他类型的数据转换为string
+		 *       方法一：
+		 *         --调用被转换数据类型tostring()方法。
+		 *       方法二：
+		 *        --  String();         Number和Boolean实际上就是调用tostring()方法;
+		 *                              null  和undefined 值最终转换为"null" 和"undefined";
+		 * 
+		 *       var  a=123;
+					console.log(typeof a);
+					console.log( a);
+					console.log(String( a));
+					
+					var  b=a.toString();
+					console.log(b);
+					
+					var  uBon=true;
+					console.log(uBon.toString())
+			
+			2  其他类型的数据转换为 Number
+			   			    方法一：  Number();
+			   			      --字符串-->数字
+			   			      1.如果是纯数字，就是数字。
+			   			      2.如果字符串中有非数字的内容，则转换为NaN;
+			   			      3.Boolean转： 0或1
+			   			      4.空字符串转-->0。
+			   			      5 Null -->0
+			   			      6 undefined-->NaN
+			   			  方法二；
+			   			    专门用来对付字符串。
+			   			   --parseInt();把一个字符串中有效的数字转换出来。例如:123px,
+			   			   --parseFloat();把一个字符串中有效的小数转出来。例如；1123.44px
+			   			   --Boolen用这种方式先转成字符出。所以转不出。
+			   			   
+			3.其他类型数据转换为Boolen
+			        		    方法：Boolen();
+			        		        数字：除啦 0和NaN其他都是true
+			        		        字符串：   除啦空值。其他都是true 
+			        		   unll和undefind :都是false
+			        		       对象：都是true;
+			        		  方法二:两次!! 隐士转换。     
+			   			      
+		 var  a ="123E";
+		 a=Number(a);
+		 console.log(a);
+		  console.log(typeof a)
+		  
+		  
+		  var  a =true;
+		  a=Number(a);
+		  console.log(a);
+		  console.log(typeof a)
+		  
+		  
+		    var  a =null;
+		   a=Number(a);
+		  console.log(a);
+		  console.log(typeof a)
+		  
+		  
+		  	   var  a =undefined;
+		   a=Number(a);
+		  console.log(a);
+		  console.log(typeof a)
+			     
+		 * */
+				
+		
+		  
+		   var  a ="     ";
+		   a=Number(a);
+		  console.log(a);
+		  console.log(typeof a)
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

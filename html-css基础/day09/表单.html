@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单</title>
+	</head>
+	<body>
+		<!--
+			表单的作用：
+			     网页中的表单是用来向服务器提交信息的。我们常见的表单就是bandu的搜索框。
+			
+		-->
+		
+		<!---		
+		  	使用form标签创建一个表单。
+		  	    form标签中必须指定一个action属性，该属性指向的是一个服务器的地址。
+		  	    当我们提交表单时将会提交到action属性中对应的服务器地址
+		  		action:
+		-->
+		
+		<form action="target.html" >
+			<!--
+				  表单项
+				1、input来创建一个文本框，它的type属性是text.
+				     
+				2. input来创建一个提交按钮。它的type属性是submit   可以将表单中的信息提交给服务器 button标签来创建。
+				                   	    它的type属性是reset     重置按钮,表单项中内容都重置 button标签来创建。
+				                   	   他的type属性是button     普通按钮。button标签来创建。
+				                  button标签来创建。更灵活、
+			
+			    3. 如果希望表单项中的数据提交到服务器中，需要指定表单项指定的一个name属性。
+				    name表示提交内容的名字。
+				    
+					    用户填写的信息会附在url地址的后面,多个会自动用&隔开。  url地址？查询字符串
+					           格式：
+					           属性名=属性值
+				4.密码框，input来创建一个文本框 type属性是password
+				
+				5.单选按钮，input来创建一个文本框 type属性是radio。
+				             1.name相同的是一组，一组只能单选。
+				             2.这个让用户选择的不需要填写，必须指定value
+				             3.指定默认选择，需要在添加项中添加：checked="checked"
+			    6.多选框 ，input来创建一个文本框 type属性是checkbox。必须指定name 和value。和radio用法一样
+			    
+			    7.下拉列表。
+			            -- 使用select来创建一个下拉.使用option标签来创建一个一个列表项。
+			            -- 下表列表的name属性需要指定给select，而value属性需要指定给option
+			            --  可以通过在下拉项中selected="selected"默认选中
+			            -- 当为select添加一个 mutiple="multiple"
+			            -- optgroup 标签对选项进行分组。label进行分组标题名。
+			    8.文本域
+			             -- textarea创建一个文本域。
+			             
+			    9.label标签
+			            --改标签可以指定一个for属性，改属性的值续页哦指定一个表单项的id值
+			            
+			    10.fieldSet
+			            --可以为表单项进行分组。将表单项的同一组放一起。
+			            --legend指定组名
+			-->
+			<fieldset id="">
+				<legend> 姓名</legend>
+				 <label for="text">用户名</label> <input id="text" type="text" name="username"/><br/>
+			性别<input type="text" name="sex"/><br/>
+				
+				
+			</fieldset>
+			
+			
+			
+				性别<input type="password" name="password"/><br/>
+			性别<input type="radio" name="radio" value="male"  />男
+			    <input type="radio" name="radio" value="female"  />女<br/>
+			爱好
+			  <input type="checkbox" name="checkbox" value="male1"  />男1
+			  <input type="checkbox" name="checkbox" value="male2"  />男2
+			  <input type="checkbox" name="checkbox" value="male3"  />男3
+			  <input type="checkbox" name="checkbox" value="male4"  />男4
+			  
+			  
+			  <br/>
+			 明星
+			   <select name="star" multiple="multiple">
+			   	
+			   	 <optgroup label="男">
+			   	 	
+			   	 	  <option value="1">范斌</option>
+			   	 	<option value="2">www</option>
+			   	 	<option value="3" selected="selected">嗯嗯</option>
+			   	 </optgroup>
+			   	   
+			   	 	<optgroup  label="呢">
+			   	 		 <option value="1">范斌</option>
+			   	 	<option value="2">www</option>
+			   	 	<option value="3" selected="selected">嗯嗯</option>
+			   	 	</optgroup>
+			   	 	
+			   </select>
+			 
+			 <textarea name="info" rows="" cols=""></textarea>
+			   
+			<input type="submit" value="注册"  />
+			<input type="reset" value="reset"  />
+			<input type="button" value="button"  />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			window.onclick=function(){
+				
+				var btn =document.getElementById("btn01");			
+				/*
+				 Location
+				    --该对象封装了浏览器的地址栏的信息
+				
+				location="http:www.baidu.com"
+				
+				    如果直接将location属性修改为一个完整的路径。或者相对路径。
+				    	则我们的页面会自动跳转该路径。并且会生成历史记录。
+				 
+				  assign();
+				    --跳转
+				  reload(); 
+				    --刷新。
+				       参数:true强制刷新缓存。
+				  replace();
+				    --可以使用新的页面替换当前页面。调用完毕也会跳转页面。
+				    -- 区别：它不会生成历史记录。不能使用回退按钮回退。
+				    
+				 * 
+				 * *
+				 * 
+				 * **/
+				alert(location);
+				location="http:www.baidu.com"
+				location.replace()
+			}
+			
+		</script>
+	</head>
+	<body>
+		<button id="btn01">	点我</button>
+		<a href="bom.html"></a>
+	</body>
+</html>

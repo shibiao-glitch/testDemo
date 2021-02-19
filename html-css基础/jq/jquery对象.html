@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>1</button>
+		<button>3</button>
+		<button>31</button>
+		<button id="btn03">21</button>
+		<button>31</button>
+		<button>41</button>
+		<script src="jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var $buttons =$('button');
+			/*size()/length ：包含dom元素的个数*/
+		 console.log( $buttons.length);
+		 /* [index]/get(index)*/
+		 console.log($buttons[2].innerHTML,$buttons.get(2).innerHTML); 
+		 
+		 $buttons.each(function(index ,item){
+		 	console.log(index,item.innerHTML,item);
+		 	console.log(this);
+		 });
+		//index()兄弟元素的中的下表。
+		console.log($('#btn03').index()) ;//2
+		
+		/*
+		   1.伪数组
+		     object
+		     length属性
+		          数值下标属性
+		     没有数组特别的方法：forEach(),push(),pop(),splice();
+		 * 
+		 * **/
+		console.log($buttons instanceof Array);
+		var weiArr={}
+		weiArr.length=0;
+		
+		
+		</script>
+	</body>
+</html>

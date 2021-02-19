@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			   正则表达式：用于检查一个字符串是否符合规则。或者提取符合规则的内容。
+			    --admin@atug.com
+			    
+			 * 
+			 * */
+			//创建正则表达式的对象。
+			/*
+			  语法：
+			   var  变量=new RegExp("正则表达式","匹配模式");
+			 * 
+			 * 
+			 * **/
+			
+			var reg=new RegExp("a");
+			var str="a";
+			
+			/*
+			   正则表达式的方法：
+			    test()
+			    --使用这个方法来检查一个字符串是否符合正则表达式的规则。
+			            符合ture;
+			 * 
+			 * 
+			 * */
+			
+			var  result=reg.test(str);
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

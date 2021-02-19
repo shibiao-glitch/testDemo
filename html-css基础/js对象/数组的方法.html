@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//创建数组
+			var  arr=["孙悟空","z","ss"];
+			/*
+			 
+			 * push()
+			 *    --往后添加数组，返回：数组长度。
+			 * 
+			 * pop()
+			 *   --删除最后一个，返回：删除的元素返回。
+			 * 
+			 * unshift()
+			 *    --往前添加数组， 向前边插入元素以后，其他元素的索引依次调整。
+			 *           返回：数组长度。
+			 * 
+			 * shift()
+			 *   --删除前面的第一个元素。返回:删除的元素返回。
+			 * 
+			 * slice()
+			 *   --可以用来从数组中提取指定元素。
+			 *   --该方法不会改变原数组，而是截取到返回新数组
+			 *   -- 参数：
+			 *         开始位索引(包含)，
+			 *         结束位索引(不包含)；默认可以不写。不写从开始到最后。
+			 *     --索引可以传递负值。倒着数。
+			 *splice()
+			 *    --可以删除数组中的指定元素。并返回被删除的元素。
+			 *    --参数：
+			 *         第一个，表示开始位置索引。
+			 *         第二个，表示删除的数量。
+			 *         第三个及以后，
+			 *              可以传递一些新的元素，这些元素将会自动插入到开始位置索引前边
+			 * 
+			 * */
+			
+			 var  newarr= arr.splice( 0,1,"eeee","eeeeewf" );
+			  console.log(newarr);
+			 console.log(arr);
+			 
+			   newarr= arr.slice( 0,2);
+			 
+			  console.log(newarr);
+			
+			
+		     var result=	arr.push("唐胜","laj","hh");
+		     console.log(result);
+			 console.log(arr);
+			
+			result=arr.pop();
+			console.log(arr);
+		    console.log(result);
+		    
+		     var result=	arr.unshift("1唐胜","1laj","1hh");
+		     console.log(result);
+			 console.log(arr);
+			 
+			 
+			 /*
+			    遍历数组:就是将数组中的所有元素都取出来
+			  * 
+			  * 
+			  * **/
+			  for (var i=0;i<arr.length;i++) {
+			  	  console.log(arr[i]);
+			  } 
+			  
+			  
+			  /*
+			      foreach();方法需要一个函数作为参数。
+			        --像这种函数，由我们创建但不是由我们调用，我们称为回调函数。
+			        --数组中有几个元素函数就会执行几次。每次执行。浏览器会将遍历到的元素以实参的形式传递进来，我们可以来定义形参。来读取这些内容。
+			        --浏览器会在回调函数中传递三个函数。
+			                               第一个参数：就是当前遍历的元素
+					                第二个参数：就是当前正在遍历的元素的索引
+					                第三个参数：就是当前遍历的数组。
+			   *       只支持ie8以上的。
+			   * 
+			   * **/
+			  
+			 
+			  arr.forEach(
+			  	 function(a,b,c){
+			  	 	console.log("hell"+a);
+			  	 }
+			  );
+			  
+			  
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

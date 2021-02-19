@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			.box1{
+				
+				
+			}
+			
+			.clearfix :after{
+				/*
+				   解决塌陷推荐使用
+				   clear  可以用清除其他浮动元素对当前元素的影响。
+				        	 可以选值：nono
+				        	          relf
+				        	          right
+				        	          both 
+				 * */			
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.box2{
+				/*
+				   box2的浮动
+				    
+				        	          
+				清楚浮动：       	          
+				 * */
+				
+				
+			}
+			
+			.box3{
+				
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1 clearfix">
+			
+		</div>
+		<div class="box2">
+			
+		</div>
+		<div class="box3">
+			
+		</div>
+	</body>
+</html>

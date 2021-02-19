@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+<script>
+    //jq的扩展方法。
+    //1.拓展工具
+    $.extend({
+        aaa: function() {},
+        bbb: function() {}
+    });
+    //2。拓展jq对象
+    $.fn.extend({
+        aaa: function() {},
+        bbb: function() {
+            alert("ddd");
+        },
+
+        //拖拽事件扩展
+        drag: function() {
+
+            //this  表示当前对象
+            $(this).mousedown(function(ev) {
+                var  offsetx  =  ev.clientX  -  $(this).offset().left;                
+                var  offsety  =  ev.clientY  -  $(this).offset().top;                
+                var  _this  =  this; 
+
+                $(document).mousemove(function(ev) {
+                    console.log(ev.clientX - offsetx );
+                    console.log(ev.clientY - offsety);
+                    $(_this).css({
+                        left: ev.clientX - offsetx,
+                        top: ev.clientY - offsety
+                    });
+                })               
+            })
+
+            //清楚事件
+            $(document).mouseup(function() {
+                    $(document).off("mousemove");
+                })
+                //注意这里的返回。
+            return this;
+        }
+    });
+</script>
+<script>
+    //window加载时间
+    $(function() {
+
+        debugger;
+        var aBtins = $('.22');
+        //通过循环添加点击事件
+        aBtins.click(function() {
+            console.log($(this).index());
+        })
+
+        $("#ddd").bbb();
+        $($("#ddd")).drag().css("backgroundColor", "red").mouseover(function() {
+            $(this).css("backgroundColor", "yellow")
+        });
+    })
+</script>
+
+
+<script>
+    /*
+                                                                                        
+                                                                                          $(cookie)
+                                                                                        
+                                                                                        **/
+    $.cookie("变种人", "x教授", {
+        expires: 7
+    })
+    $.cookie("变种人2", "x教授3", {
+        expires: 30
+    })
+    $.cookie("变种人3", "x教授3", {
+        expires: 30
+    })
+</script>
+
+
+<script>
+    /*
+                                               $().loda()
+                                               $.get()
+                                               $.post()
+                                            */
+    $(function() {
+
+        //ajax的一个反复
+        $('#btn').click(function() {
+            $.ajax({
+                    type: get,
+                    url: "1.txt",
+                    data: {
+
+                    },
+                    dataType: jsonp, //解决跨域问题
+                    success: function(data, statusText, xhr) {
+                        /*
+                            statusText
+                            xhr ajax对象。
+                    
+                        **/
+                    },
+                    error: function(msg) {
+
+                    }
+                }
+
+            )
+        })
+
+
+
+        //load  将加载的数据之间填充。
+        $('#ddd').click(function() {
+            $('#div').load("1.txt", function(data, statusText, xhr) {
+                /*
+                    Data  下载到饿数据
+                    StatusText  下载的状态  seccess
+                    xhr  ajax 对象
+                */
+                alert(data);
+                alert(xhr.status);
+            })
+        })
+
+        //get
+        $('#ddd').click(function() {
+            $.get("1.txt", function(data, statusText, xhr) {
+                /*
+                    Data  下载到饿数据
+                    StatusText  下载的状态  seccess
+                    xhr  ajax 对象
+                */
+                alert(data);
+                alert(xhr.status);
+            })
+        })
+
+        //post
+        $('#ddd').click(function() {
+            $.post("1.txt", {
+                age: 18,
+                name: "wwww"
+            }, function(data, statusText, xhr) {
+                /*
+                    Data  下载到饿数据
+                    StatusText  下载的状态  seccess
+                    xhr  ajax 对象
+                */
+                alert(data);
+                alert(xhr.status);
+            })
+        })
+
+    })
+</script>
+
+<style>
+    #ddd {
+        background-color: rebeccapurple;
+        width: 100px;
+        height: 50px;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <h1 class="22">hello world2</h1>
+    <h1 class="22">hello world3</h1>
+    <h1 class="22">hello world4</h1>
+    <h1 class="22">hello world5</h1>
+    <div id="ddd">
+        <button id='btn'></button>
+    </div>
+</body>
+
+</html>

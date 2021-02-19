@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.box1{
+				
+				/*
+				   根据w3c的标准，在页面中元素都有一个隐藏的属性叫做Block  Formatting  Context
+				   简称 BFC,该属性可以设置打开或者关闭，默认关闭。
+				   
+				     当开启元素的BFC以后，元素将会具有如下特性。
+				      1.父元素的垂直外边距不会和子元素重叠。
+				      2.开启BFC的元素不会被浮动元素所覆盖。
+				      3.父元素开启BFC元素可以包含浮动的子元素。
+				      
+				      
+				      如果开启呢
+				     1.设置元素浮动。
+					           使用这种方式开启，虽然可以撑开父元素，但是会导致父元素的宽度丢失
+					           而且也会是下面 的元素上移。
+				     2.设置元素绝对定位
+				     3.设置元素inline-block
+				             可以解决，但是也会导致父元素宽度丢失。
+				     4.将元素的overflow设置一个非visible.
+				     5.
+				     
+				     
+                           推荐方式：将overflow设置为hidden是副作用最小的。
+				 * */
+				border: 10px red solid;
+				overflow: auto;
+			}
+			
+			.box2{
+				width: 100px;
+				height: 200px;
+				background-color: yellow;
+				/*
+				 * 父元素的高度是被子元素撑开的。
+				 * 当为子元素设置浮动后，子元素则会完全脱离文档流，
+				 * 						这个时候父类高度塌陷了。由于父元素塌陷了，则
+				 * 父元素下面的元素都向上移动，导致页面布局混乱。
+				 * 一定要避免这样的情况。写死父类的高度，则导致高度不能随子元素来变化。
+				 * 
+				 * 解决方法：
+				 * 
+				   给子元素设置浮动
+				 * 
+				 * **/
+				float: left;
+			}
+			.box3{
+				width: 100px;
+				height: 200px;
+				background-color: chartreuse;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box1">	
+		  <div class="box2">
+		  	
+		  </div>
+		</div>
+		<div class="box3">
+			
+		</div>
+	</body>
+</html>

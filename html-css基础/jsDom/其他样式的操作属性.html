@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#box1{			
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			padding: 10px;
+			border: 10px solid red;
+		}
+		#box2{			
+		
+			padding: 100px;
+			background-color: green;
+		}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload =function(){
+				
+				var box1=document.getElementById("box1");
+				var btn01=document.getElementById("btn01");
+				btn01.onclick=function(){
+				  /*
+				     clientWidth				     
+				     clienHeight
+				        --元素的可见宽度和高度。
+				           功能：1.返回的是值。
+				           2.会获取元素的宽度和高度。【包含内边距，内容宽度。】
+				           3.这些属性都是只读的，不能改。
+				         alert(box1.clientWidth);    
+				           
+				    offsetWidth
+				    offwetHeight
+				        --获取元素的整个宽度和高度。【包含内容，内边距，边框】
+				           alert(box1.offsetWidth);
+				           
+				     offsetParent
+				        -- 可以用来获取当期元素的定位父元素。
+				        -- 会获取到当前元素最近的开启了定位的祖先元素。
+				         var  op= box1.offsetParent;
+				   		 alert(op.id);
+				   		 
+				   	offsetLeft
+				   	    --当前元素相对其定为元素的水平偏移量
+				   	    
+				   	offsetTop
+				   	    --当期元素相对其定为的垂直偏移量。
+				   	    
+				   	    
+				   	
+				   	scrollWidth
+				   	scrollHeigh
+				   	   -- 可以获取元素整个滚动区域 的高度和宽度。【滚动条区域和内容区域】
+				   	   
+				   	 scrollLeft
+				   	    -- 可以获取水平滚动条滚动的距离。
+				   	 scrollTop
+				   	     --可以获取垂直滚动条的距离。
+				   * 
+				   * 
+				   * **/
+				   var  op= box1.offsetParent;
+				   alert(op.offsetLeft);
+				   //当满足scrollHeight-scrollTop==clientHeight
+				   //说明水平滚动条滚动到底。
+				   
+				 
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn01">点我一下试试</button>
+		   <button id="btn02">点我一下试试</button>
+		   <br />
+		
+		
+		<div id="box4">
+				
+			</div>
+			<br />
+		
+		<div id="box2" style="position: relative;">
+				<div id="box1">
+				
+			</div>
+	    </div>
+		
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				width: 500px;
+				height: 300px;
+			}
+			#outer{
+				width: 500px;
+				height: 313px;
+				margin: 50px auto;
+				 background-color: greenyellow;
+				 padding: 10px 0;
+				 position: relative;
+				 overflow: hidden;
+			}
+			#imglist{
+				/*
+				  去掉符合
+				 * */
+				list-style: none;
+				
+				position: absolute;
+				/*
+				   设置偏移量。
+				 * */
+				 
+			}
+			#imglist li{
+				
+				float: left;
+				margin:  0 10px ;
+			}
+			
+			#navDiv {
+				 position: absolute;
+				 bottom: 15px;
+				 
+			}
+			
+			#navDiv a{
+				 float: left;
+				 width: 15px;
+				 height: 15px;
+				 background-color: red;				
+				 margin: 0 5px;				 
+				 opacity: 0.5;
+			}
+			
+			#navDiv a:hover{				
+				 background-color: black;								
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				
+				var imglis=document.getElementById("imglist");				
+				var imgArr=document.getElementsByTagName("img");
+				imglis.style.width=imgArr.length*520+"px";
+								
+				//设置导航居中
+				var navDiv=document.getElementById("navDiv");
+				var outer=document.getElementById("outer");
+				navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2 +"px";
+			
+			
+			    var index=0;
+			    var  allA=document.getElementsByTagName("a");
+			    
+			    //设置默认选择的样式
+			    allA[index].style.backgroundColor="black";
+			    
+			    
+			    /*
+			     
+			      		点击超链接切换到指定的图片
+			      		
+			      		为所有超链接绑定点击事件
+			     * 
+			     * 
+			     * **/
+			    for (var i=0;i<allA.length;i++) {
+			    	allA[i].num=i; 
+			    	allA[i].onclick =function(){
+			    		//获取点击超链接的索引。
+			    		index=this.num;
+			    		imglis.style.left=-520*index+"px";
+			    		setA();
+			    		//移动。
+			    	}
+			    }
+			    
+			    
+			    //创建一个方法用来设置选中的a
+			    function  setA(){
+			    	 for (var i=0;i<allA.length;i++) {
+			    	 		allA[i].style.backgroundColor="";//去掉样式就是默认 的
+			    	 }
+			    	 allA[index].style.backgroundColor="black";
+			    };
+			}
+		</script>
+	</head>
+	<body>
+		<!--创建一个外部的div来作为大的容器-->
+		<div id="outer">
+			<!--创建一个ul用户放置图片-->
+			<ul id ="imglist">
+				<li><img src="img/1.gif"/></li>
+				<li><img src="img/2.gif"/></li>
+				<li><img src="img/1.gif"/></li>
+				<li><img src="img/2.gif"/></li>
+			</ul>
+			<div id="navDiv">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>				
+			</div>
+		</div>
+	</body>
+</html>

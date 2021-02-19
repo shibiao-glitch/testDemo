@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			function Person(name,age,gender){
+				this.name=name;
+				this.age=age;
+				this.gender=gender;							
+			}
+		    // "name" in Person  查询属性。原型或当前类(自身)中有即可
+		    //  mc.hasOwnProperty("name") 当前类(自身)中查找。
+		    
+		    /*
+		       原型对象也是对象，所以它也有原型。
+		          当我们使用一个对象的属性或方法时，会先在自身中寻找。
+			          自身中如果有，则直接使用。
+			          如果没有则去原型对象中寻找，如果原型对象中有，则使用
+			          入股没有则去原型的原则中寻找。直到找到Object对象的原型。
+			      Object对象的原型没有原型，如果在Object中没有找到则返回undefined.    
+		     * 
+		     * **/
+		     
+		   var mc =new Person("1",12,"2");
+		   console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+		   console.log(mc.__proto__.__proto__.__proto__);
+	           	
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

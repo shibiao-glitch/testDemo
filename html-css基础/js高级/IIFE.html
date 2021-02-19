@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			IIFE
+			1.理解：//匿名函数自调用
+			2作用：
+			   隐藏实现，
+			  不会污染外部（全局）命名空间。
+			  用它来编码js模块。
+			   
+		-->
+		<script type="text/javascript">
+			(function(){//匿名函数自调用。
+				console.log('ss');
+			} )();
+			
+			
+			(function(){
+				var  a=1;
+				function test(){
+					console.log(++a);
+				}				
+				window.$=function(){					
+					return {
+					  test :test
+					}
+				}
+			})();
+			
+			$().test();//1 $是函数。test是返回的对象。调用test()函数。
+			
+		</script>
+	</body>
+</html>

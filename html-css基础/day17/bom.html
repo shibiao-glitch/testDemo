@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			  BOM
+			  -- 浏览器对象模型
+			  --BOM可以使我们通过js来操作浏览器的
+			  --BOM中为我们提供一组对象，用来完成对浏览器的操作
+			  --BOM
+			       window
+			          --代表的是整个浏览器的窗口，同时window也是网页中的全局对象
+			       Navigator
+			          --代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
+			          --由于历史原因，Navigator对象已经不能帮我们识别浏览器。
+			          --一般我们只会使用userAgent来判断浏览器的信息。
+			           	 不同的浏览器userAgent不同。
+			           	 
+				       火狐：			       
+						Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0
+	                Chrome
+	                    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
+			    
+			    
+			    Location
+			           --代表当前浏览器的地址栏信息。通过Loction获取地址栏信息。或者操作浏览器跳转页面
+			       History
+			          -- 代表浏览器的历史记录。可以通过该对象来操作浏览器的历史记录。
+			          --由于隐私原因，该对象不能获取到具体的历史记录。只能操作浏览器向前或向后
+			                         只在当成有效。
+			       Screen
+			         代表用户的屏幕的信息。显示器的相关信息。
+			         
+			         
+			    这些BOM对象在浏览器中都是昨晚window对象的属性来保存的。
+			      可以通过window对象来使用，也可以直接使用。
+			 * 
+			 * */
+			
+			//alert(navigator.userAgent);
+			if(/firefox/i.test(navigator.userAgent)){
+				alert("我是火狐");
+			}else if(/chrome/i.test(navigator.userAgent)){
+				alert("我是chrome");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

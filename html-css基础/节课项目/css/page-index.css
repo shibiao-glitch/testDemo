@@ -1,0 +1,81 @@
+/*
+ 
+ 在这里编辑主页的
+ 
+
+ * 
+ * **/
+
+ .body{
+ 	  
+ 	background-image:url(../img/3.gif) ;
+ 	background-repeat: repeat;
+ 	background-color: burlywood;
+ }
+ 
+ /*
+  固定元素的宽度。
+  * 
+  * **/
+.w{
+	
+	width: 940px;
+	margin: 0 auto;
+}
+
+.logopic{
+	
+	width: 204px;
+	height: 50px;
+}
+
+.header{
+	background-color: blue;
+	padding-top: 37px;
+	padding-bottom: 46px;
+}
+
+.logo{
+	
+	margin-left: 15px;
+}
+
+.nav{
+	
+	float: right;
+	
+	margin-top: 8px;
+}
+
+.nav li{
+		
+	float: left;
+	padding: 0 10px 8px;
+	border-left: 1px #d6d6d6 dotted;
+}
+.nav a{
+	color: #666;
+	font: bold  14px georgia;	
+	text-decoration: none;
+}
+
+.nav a:hover{
+	
+	color: #a1a1a1;
+	text-decoration: underline;
+	
+}
+
+.nav p{
+	color: #b7b7b7;
+	font:   11px tahoma;	
+}
+	
+
+.bannergopic{
+	
+	width: 604px;
+	height: 50px;
+}
+	
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr=[1,1,4,4,5,4,5,7,4,5,8,7,9];
+			
+			
+			//
+			for(var i=0;i<arr.length;i++){				
+				console.log(i);
+				for (var j=i+1;j<arr.length;j++) {
+					console.log("----->"+arr[j]);
+					if(arr[i]==arr[j]){
+						arr.splice(j,1);
+						//当删除了。当前j所以的元素以后，后面的元素会自动补位。
+						//此时将不会再比较。我们需要再重新比较一次。
+						j--;
+					}
+				}
+			}
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

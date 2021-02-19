@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			   创建一个函数。
+			     可以使用return来设置函数的返回值。
+			     语法：
+			       return 值。
+			       如果return语句后不跟任何值就相当于返回一个undefined。
+			                     如果函数中不写return 则也会返回undefined.
+			    
+			     retrun后面可以跟任意类型的值。对象和函数都可以。
+			       
+			 * 
+			 * 
+			 * 
+			 * **/
+			
+			function sum(a,b,c){
+				//alert(a+b+c);				
+				var  d=a+b+c;				
+				return d;			
+			}		
+			//函数返回什么result的值就是什么。
+		    var  result=sum(1,2,8);
+		    
+		    
+		    function  sayHell(name,age,gender,address){
+		    	console.log(name+age+gender+address);
+		    	
+		    }		    
+		    sayHell("孙悟空",18,"男","高老庄");
+			
+			
+			//对象传参数。
+			var  obj={				
+				 name:"对象",
+				 age:18,
+				 gender:"男",
+				 address:"高老庄"			
+			};			
+			function sayHello1(O){
+					console.log(O.name+O.age+O.gender+O.address);
+				
+			}
+			sayHello1(obj);
+			
+			/*
+			   实参可以是一个对象，也可以是一个函数。sayHello1.a再调用函数。
+			 *                                   sum(1,2,3)，这种的话相当于先执行函数，函数返回值再传入。
+			 * 
+			 * function fun(a){
+				console.log("a="+a);
+				a(obj);				
+			}
+			fun(sayHello1);
+			fun(sum(1,2,3));
+			 * */
+			
+			
+			
+			function fun333(){
+				 return {name:"沙和尚"};
+				
+			}
+			var a=fun333();
+			console.log("a="+a.name);
+			console.log(a)
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

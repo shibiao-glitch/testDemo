@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul  id ='ul1'>
+			<li>aaaa</li>
+			<li title="hello">BBBB</li>
+			<li class="box">CCC</li>
+			<li title="hello" >DDDD</li>
+			<li title="hello" ><span>sssss</span></li>
+			<span>sssdddss</span>
+			<span>sssdddss</span>
+		</ul>
+		<button>点击</button>
+		<!--
+			1.事件委托（委派/代理）
+			将多个子元素（）
+			
+			
+		-->
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		  <script type="text/javascript">
+		  	//添加后的元素也会自动响应
+		  	
+		  	//添加事件委托
+			$('ul').delegate('li','click',function(){
+				console.log(this);
+				this.style.backgroundColor='red';
+			})
+			
+			//移除事件委托
+			$('ul').undelegate('click');
+			
+		  </script>
+		  
+		  
+	</body>
+</html>

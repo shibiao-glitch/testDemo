@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" class="box">
+			div1(class="box")
+		</div>
+		<div id="div2" class="box">
+			div2(class="box")
+		</div>
+		<div id="div3" >
+			 div3
+		</div>
+		<span class="box">
+			span
+		</span>
+		
+		<br />
+		<ul  id ='ul1'>
+			<li>aaaa</li>
+			<li title="hello">BBBB</li>
+			<li class="box">CCC</li>
+			<li title="hello" >DDDD</li>
+			<li title="hello" ><span>sssss</span></li>
+			<span>sssdddss</span>
+			<span>sssdddss</span>
+		</ul>
+		<li  >DDsadfDD</li>
+		<li  >DDsadffdfdfDD</li>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		   <script type="text/javascript">
+		   	  //append 添加到最后
+		   	  var $ul1=$('#ul1');
+		   	  $ul1.append('</br><span>添加span</span>');
+		   	  //appendTo
+		   	  $('</br><span>添加span</span>').appendTo($ul1);
+		   	  //添加到第一个
+		   	  $ul1.prepend('</br><span>添加span</span>');
+		   	  $('</br><span>添加span</span>').prependTo($ul1);
+		   	  
+		   	  //在id为ul1下的li(title为hello)的前面
+		   	  $ul1.children('li[title=hello]').before('</br><span>添加span222</span>');
+		      
+		      //在id为ul1下的li(title为hello)的后面
+		      $ul1.children('li[title=hello]').after('</br><span>添加span22ds2</span>');
+		  
+		       //在id为ul1下的li(title为hello)全部替换replaceWith
+		       $ul1.children('li[title=hello]').replaceWith('<p>替换</p>')
+		       
+		       //清空子元素。
+		       //$('#ul1').empty();
+		       //删除
+		       $('#ul1>li').remove();
+		       
+		   </script>
+	</body>
+</html>

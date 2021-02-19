@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div>
+			<button id="btn"> 测试</button>
+			<br />
+			<input type="text" id="msg1" value="" /><br />
+			<input type="text" id="msg2" value="" /><br />
+		</div>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!--
+		
+		
+		1.作为一般函数调用$(param)
+		    1:参数为函数：当Dom加载完成后，执行此回调函数
+		    2：参数为选择器字符串：查找所以匹配的标签，并将它们封装成jquery对象
+		    3：参数为dom对象：将dom对象封装成jquery对象
+		    4:参数为html标签字符串（用得少）：创建标签对象并封装成jquery对象
+		2.作为对象使用：$.xxx()
+		  1)$.each():隐士遍历数组
+		  2）
+	-->
+	<script type="text/javascript">
+		//绑定文档加载完的监听.里面写一个回调函数
+		$(
+			function(){
+				//参数为选择器字符串：查找所以匹配的标签，并将它们封装成jquery对象
+				$('#btn').click(function(){//绑定点击事件监听
+					//this是什么？发生事件的dom元素。（button）					
+					//alert(this.innerHTML);
+				     alert($(this).html());
+				     //1.4参数为html标签字符串，创建标签对象并封装成jquery对象
+				     $('<input type="text" id="msg3" value="" /><br />').appendTo('div');
+				}
+				
+				);
+			}
+			
+		);
+	
+	
+	 var  arr=[2,4,7];
+	 $.each(arr, function(index ,item) {
+	 	console.log(index,item);
+	 });
+	 //2.去空格
+	 var str ='  mys s ';
+	 console.log(str);
+	  console.log($.trim(str));
+	</script>
+	</body>
+</html>

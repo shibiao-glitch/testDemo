@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+	        function del(){					
+				/*
+				   点击超链接。删除超链接所在的哪行.
+				   这里我们点击那个超链接this就是谁。
+				 * */
+				var  tr =this.parentNode.parentNode;
+			
+			     //删除前提示。
+			   var result= confirm("是否删除？");
+			
+				//删除tr
+				if(result)
+					tr.parentNode.removeChild(tr);																		
+				/*
+				  点击超链接。默认会跳转。
+				    但我此时我们不希望出现默认行为。可以通过响应函数的最后return false来取消默认行为
+				 * 
+				 * */
+				return false;
+			};
+				
+			
+			window.onload =function(){
+				
+				/*
+				   点击超链接
+				 * 
+				 * */
+				
+				/*
+				 
+				    for循环会在页面加载完成之后立即执行。而响应函数会在超链接被点击才执行。
+				 * 
+				 * 
+				 * **/
+				var allA=document.getElementsByTagName("a");
+				for (var i=0;i<allA.length;i++) {
+					allA[i].onclick=del;
+					
+				}
+			
+			
+			
+			  /*
+			     添加员工的功能
+			     --点击按钮。
+			   * 
+			   * 
+			   * **/
+			  
+			  var  addEmp =document.getElementById("addEmp");
+			  addEmp.onclick=function(){
+			  	
+			  	
+			  	//获取用户添加的员工信息
+			  	var name =document.getElementById("empName").value;
+			  	var email =document.getElementById("email").value;
+			  	var salary =document.getElementById("salary").value;
+			  	
+			  	/*
+			  	 <tr>
+					<td>tom</td>
+					<td>tom@tom.con</td>
+					<td>5000</td>
+					<td><a href="">delete</a></td>
+				</tr>
+				需要将获取大的信息保存到tr中
+			  	 * **/
+			  	var tr =document.createElement("tr");
+			  	
+			  	tr.innerHTML="<td>"+name +"</td>"+
+			  	              "<td>"+email +"</td>"+
+			  	              "<td>"+salary +"</td>"+
+			  	              "<td><a href='javascript:;'    > delet</a></td>";
+			  	              
+			  	var a= tr.document.getElementsByTagName("a")[0];
+			  	console.log(a);
+			  	
+			  	a.onClick=del;
+			  	//获取table
+			  	var  empl =document.getElementById("empl");
+			  	empl.appendChild(tr);
+			  	
+			  };
+			  
+			  
+			
+			}
+		</script>
+	</head>
+	<body>
+		<div id="">
+			<table id ="empl" border="" cellspacing="" cellpadding="">
+				<tr><th>Name</th><th>Email</th><th>Salary</th><th></th></tr>
+				<tr>
+					<td>tom</td>
+					<td>tom@tom.con</td>
+					<td>5000</td>
+					<td><a href="">delete</a></td>
+				</tr>
+				<tr>
+					<td>Jeery</td>
+					<td>Jeerym@tom.con</td>
+					<td>15000</td>
+					<td><a href="">delete</a></td>
+				</tr>
+				<tr>
+					<td>Bob</td>
+					<td>Bob@tom.con</td>
+					<td>400</td>
+					<td><a href="">delete</a></td>
+				</tr>
+			</table>
+		</div>
+		     <p>添加新员工</p>
+		    
+		     <lable for="">name:</lable>    <input type="text" name="user" id="empName" value="" /> <br />
+		      <lable for="">email:</lable>   <input type="text" name="email" id="email" value="" /> <br />
+		       <lable for="">salary:</lable>   <input type="text" name="salary" id="salary" value="" /> <br />
+		     <input type="button" name="" id="addEmp" value="Submit" />
+		<div id="">
+			
+		</div>
+	</body>
+</html>
